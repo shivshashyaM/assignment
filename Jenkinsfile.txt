@@ -1,7 +1,7 @@
-pipeline {
+ipipeline {
 
   environment {
-    dockerimagename = "shivshashya/assignment"
+    dockerimagename = "shivshashya/nodeapp"
     dockerImage = ""
   }
 
