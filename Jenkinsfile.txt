@@ -9,17 +9,17 @@ pipeline {
 
   stages {
 
-    stage('Checkout Source') {
+    stage('Checkout Source') { //Login GitHub
       steps {
         git 'https://github.com/shivshashyaM/assignment.git' //My public git repository
       }
     }
      
 
-   stage('Build image') {
+   stage('Build image') { //Building image
       steps{
         script {
-          dockerImage = docker.build dockerimagename  //Building image. Name will be taken from environment
+          dockerImage = docker.build dockerimagename  //Name taken from environment
         }
       }
     }
