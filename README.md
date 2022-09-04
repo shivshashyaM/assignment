@@ -14,8 +14,10 @@ Docker desktop
 Jenkins
 wsl
 
-# run
+## run
+# starting minikube in command prompt
 Minikube start in Cmd
+# creating namespace
 kubectl get namespaces
 kubectl create namepace <name of namespace>
 kubectl get namespaces
