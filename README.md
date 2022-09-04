@@ -73,7 +73,7 @@ minkube service --url -n namespace
  Click on add new item
  Enter item name and select pipeline press ok
  Go to pipeline section
- Selct Poll SCM under Build triggers
+ Select Poll SCM under Build triggers
  Select in definition Pipeline script from SCM  
  Select Git in SCM
  Add your github repository
