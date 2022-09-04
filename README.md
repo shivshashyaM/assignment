@@ -35,6 +35,33 @@ wsl
 kubectl create -f jenkinsdeployment.yaml -n namespace
 
 kubectl create -f jenkinsservice.yaml -n namespace
+
+To access jenkins server
+minkube service --url -n namespace
+
+
+# Building docker image for that we need to have Dockerfile in local system
+ docker build -t dockerrepositeryname/imagename .
+ 
+# Push the build image to dockerhub repository
+ docker login
+ docker push dockerrepositeryname/imagename:tag
+ 
+# Push kubedeployment.yam to github repository
+ git status
+ git add .
+ git commit -m "commit"
+ git remote -v
+ git push -u origin master
+ 
+# Adding plugins to Jenkins server
+ Docker pipeline plugin
+## Download kubernetes-cd plugin  
+  
+ 
+ 
+
+ 
   
   
 
