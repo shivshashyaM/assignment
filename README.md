@@ -40,7 +40,7 @@ These commands will push cloned gitlab repository from local machine into github
  * git status 
  * git add .
  * git commit -m "commit" 
- * git remote add origin (github link)
+ * git remote add origin <github link>
  * git remote -v
  * git push -u origin master
  
