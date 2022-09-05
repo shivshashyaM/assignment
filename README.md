@@ -33,14 +33,14 @@ These commands will fetch namespaces and create new namespace in minikube
  * kubectl get namespaces // To fetch newly created namespace
 
 This command will clone repository from gitlab link into local machine
- * git clone <Gitlab link>
+ * git clone Gitlab link
  
 These commands will push cloned gitlab repository from local machine into github repository
  
  * git status 
  * git add .
  * git commit -m "commit" 
- * git remote add origin [<github link>]
+ * git remote add origin github link
  * git remote -v
  * git push -u origin master
  
@@ -56,12 +56,12 @@ Steps to create docker image
  * add to git repository // This will be done through git commands
  
 This command will be used for building docker image needed for deploying application in kubernetes cluster
- *  docker build -t <dockerrepositoryusername>/<imagename> .
+ *  docker build -t dockerrepositoryusername/imagename .
  *  docker images
 
 These commands will push build image to dockerhub repository
  * docker login
- * docker push <dockerrepositoryusername>/<imagename>:<tag>
+ * docker push dockerrepositoryusername/imagename:ta>
  
 These commands will push kubedeployment.yaml to github repository //kubedeployment.yaml is added in repository for reference
  * git status
@@ -83,7 +83,7 @@ These commands will push kubedeployment.yaml to github repository //kubedeployme
  * git push -u origin master
  
  Add user credentials for dockerhubregistery and kubernetes in jenkins managed credentials
-  * for Dockerhub use <username> and <password>
+  * for Dockerhub use username and password
   * for kubernetes use kubeconfig file
 
  Runing pipeline through jenkins interface
