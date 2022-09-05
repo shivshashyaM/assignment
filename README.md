@@ -1,22 +1,25 @@
-# assignment
+# Intorduction
+This file can be refered to step by step approach on how an application can be deployed on Kubernetes cluster.
+
+# Pre Requisties
+* GitHub repository
+* Docker repository
+* Docker
+* Kubernetes (minikube or K3s)
+* Application to be deployed
 
 # Requirements
-*GitHub repository
-*Docker repository
-*Jenkins
-*Docker
-*Kubernetes (minikube or K3s)
-*Application to be deployed
+* Jenkins
 
 # Installation 
-Minikube or K3s
-Docker desktop
-Jenkins
-wsl
+* Minikube or K3s
+* Docker desktop
+* Jenkins
+* wsl
 
-## run
-# starting minikube in command prompt
- Minikube start in Cmd
+## Steps To Deploy Application
+# This command will be used to start minikube in command prompt
+ * Minikube start in Cmd
 # creating namespace in minikube
  kubectl get namespaces
  kubectl create namepace namespace
