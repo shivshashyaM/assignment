@@ -1,7 +1,7 @@
-# Intorduction
+# Introduction
 This file can be refered to step by step approach on how an application can be deployed on Kubernetes cluster.
 
-# Pre Requisties
+# Pre-Requisties
 * GitHub repository
 * Docker repository
 * Docker
@@ -10,6 +10,11 @@ This file can be refered to step by step approach on how an application can be d
 
 # Requirements
 * Jenkins
+* Dockerfile
+* CI/ CD Pipeline
+* Jenkinsfile
+* yaml files
+* Kubernetes CD Plugin
 
 # Installation 
 * Minikube or K3s
@@ -17,22 +22,28 @@ This file can be refered to step by step approach on how an application can be d
 * Jenkins
 * wsl
 
-## Steps To Deploy Application
-# This command will be used to start minikube in command prompt
+# Steps To Deploy Application
+
+This command will be used to start minikube in command prompt
  * Minikube start in Cmd
-# creating namespace in minikube
- kubectl get namespaces
- kubectl create namepace namespace
- kubectl get namespaces
-# Clone the repository to local machine
- git clone (github link)
-# Push the image to GitHub repositery
- git status
- git add .
- git commit -m "commit"
- git remote add origin (github link)
- git remote -v
- git push -u origin master
+ 
+These commands will fetch namespaces and create new namespace in minikube
+ * kubectl get namespaces
+ * kubectl create namepace namespace
+ * kubectl get namespaces // To fetch nes namespace
+
+This command will clone repository from gitlab link into local machine
+ * git clone <Gitlab link>
+ 
+These commands will push cloned gitlab repository from local machine into github repository
+ 
+ * git status 
+ * git add .
+ * git commit -m "commit" 
+ * git remote add origin (github link)
+ * git remote -v
+ * git push -u origin master
+ 
 # Jenkins deployment
 
 kubectl create -f jenkinsdeployment.yaml -n namespace
