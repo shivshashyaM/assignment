@@ -1,5 +1,5 @@
 # Introduction
-This file can be refered to step by step approach on how an application can be deployed on Kubernetes cluster using CI/CD pipeline integration.
+This file can be referred to step by step approach on how an application can be deployed on Kubernetes cluster using CI/CD pipeline integration.
 
 # Pre-Requisties
 * GitHub repository
