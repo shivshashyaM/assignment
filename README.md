@@ -33,7 +33,7 @@ These commands will fetch namespaces and create new namespace in minikube
  * kubectl get namespaces // To fetch newly created namespace
 
 This command will clone repository from gitlab link into local machine
- * git clone Gitlab link
+ * git clone gitlab link
  
 These commands will push cloned gitlab repository from local machine into github repository
  
