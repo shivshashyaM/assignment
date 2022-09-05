@@ -41,7 +41,7 @@ pipeline {
     stage('Deploying App to Kubernetes') {   //Deploying the app in Kubernetes 
       steps {
         script {
-          kubernetesDeploy(configs: "kubedeployment.yaml", kubeconfigId: "kubernetes")  //.yaml file for deployment. KubeconfigId for login, credentials in Jenkins
+          kubernetesDeploy(configs: "kubedeployment.yaml", kubeconfigId: "kubernetes")  //yaml file for deployment. KubeconfigId for login, credentials in Jenkins
         }
       }
     }
