@@ -25,12 +25,12 @@ This file can be refered to step by step approach on how an application can be d
 # Steps To Deploy Application
 
 This command will be used to start minikube in command prompt
- * Minikube start in Cmd
+ * minikube start
  
 These commands will fetch namespaces and create new namespace in minikube
  * kubectl get namespaces
  * kubectl create namepace namespace
- * kubectl get namespaces // To fetch nes namespace
+ * kubectl get namespaces // To fetch newly created namespace
 
 This command will clone repository from gitlab link into local machine
  * git clone <Gitlab link>
@@ -44,56 +44,59 @@ These commands will push cloned gitlab repository from local machine into github
  * git remote -v
  * git push -u origin master
  
-# Jenkins deployment
+ These commands will initiate Jenkins deployment
+ * kubectl create -f jenkinsdeployment.yaml -n namespace //added jenkinsdeployment.yaml file in github repository for reference
+ * kubectl create -f jenkinsservice.yaml -n namespace //added jenkinsservice.yaml file in github repository for reference
 
-kubectl create -f jenkinsdeployment.yaml -n namespace
-
-kubectl create -f jenkinsservice.yaml -n namespace
-
-To access jenkins server
-minkube service --url -n namespace
-
-
-# Building docker image for that we need to have Dockerfile in local system
- docker build -t dockerrepositeryname/imagename .
+These commands will be used to access jenkins server
+ * minkube service --url -n namespace
  
-# Push the build image to dockerhub repository
- docker login
- docker push dockerrepositeryname/imagename:tag
+Steps to create docker image
+ * create Dockerfile
+ * add to git repository // This will be done through git commands
  
-# Push kubedeployment.yam to github repository
- git status
- git add .
- git commit -m "commit"
- git remote -v
- git push -u origin master
- 
- # Creating CI/CD pipeline
-## Adding plugins to Jenkins server
- Docker pipeline plugin
-## Download kubernetes-cd plugin (provided in github repository)
+This command will be used for building docker image needed for deploying application in kubernetes cluster
+ *  docker build -t <dockerrepositoryusername>/<imagename> .
+ *  docker images
 
-# Push Jenkinsfile to github repository
- git status
- git add .
- git commit -m "commit"
- git remote -v
- git push -u origin master
+These commands will push build image to dockerhub repository
+ * docker login
+ * docker push <dockerrepositoryusername>/<imagename>:<tag>
  
-# Add user credentials for dockerhubregistery and kubernetes in jenkins manage credentials
-  Use kubeconfig for kubernetes
+These commands will push kubedeployment.yaml to github repository. kubedeployment.yaml is added in repository for reference
+ * git status
+ * git add .
+ * git commit -m "commit"
+ * git remote -v
+ * git push -u origin master
+ 
+ # Steps to initiate CI/CD pipeline.
+  Add plugins to Jenkins server 
+ * add Docker pipeline plugin
+ * download kubernetes-cd plugin // This is added in github repository for reference
 
-# Run pipeline through jenkins interface
- Click on add new item
- Enter item name and select pipeline press ok
- Go to pipeline section
- Select Poll SCM under Build triggers
- Select in definition Pipeline script from SCM  
- Select Git in SCM
- Add your github repository
- Add Jenkinsfile under Script Path
- Clink apply and then save
- Clink on Build now and wait for pipeline to trigger
+  Push Jenkinsfile to github repository
+ * git status
+ * git add .
+ * git commit -m "commit"
+ * git remote -v
+ * git push -u origin master
+ 
+ Add user credentials for dockerhubregistery and kubernetes in jenkins managed credentials
+  * for Dockerhub use <username> and <password>
+  * for kubernetes use kubeconfig file
+
+ Runing pipeline through jenkins interface
+ * Click on add new item
+ * Enter item name and select pipeline press ok
+ * Go to pipeline section
+ * Select Poll SCM under Build triggers
+ * Select in definition Pipeline script from SCM  
+ * Select Git in SCM
+ * Add your github repository
+ * Add Jenkinsfile under Script Path
+ * Clink apply and then save
+ * Clink on Build now and wait for pipeline to trigger
  
  
 
