@@ -1,5 +1,5 @@
 # Introduction
-This file can be refered to step by step approach on how an application can be deployed on Kubernetes cluster.
+This file can be refered to step by step approach on how an application can be deployed on Kubernetes cluster using CI/CD pipeline integration.
 
 # Pre-Requisties
 * GitHub repository
@@ -63,7 +63,7 @@ These commands will push build image to dockerhub repository
  * docker login
  * docker push <dockerrepositoryusername>/<imagename>:<tag>
  
-These commands will push kubedeployment.yaml to github repository. kubedeployment.yaml is added in repository for reference
+These commands will push kubedeployment.yaml to github repository //kubedeployment.yaml is added in repository for reference
  * git status
  * git add .
  * git commit -m "commit"
@@ -73,7 +73,7 @@ These commands will push kubedeployment.yaml to github repository. kubedeploymen
  # Steps to initiate CI/CD pipeline.
   Add plugins to Jenkins server 
  * add Docker pipeline plugin
- * download kubernetes-cd plugin // This is added in github repository for reference
+ * download kubernetes-cd plugin // This is added to github repository for reference
 
   Push Jenkinsfile to github repository
  * git status
